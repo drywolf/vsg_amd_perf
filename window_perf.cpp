@@ -22,6 +22,7 @@ int main(int argc, char** argv)
     windowTraits->windowTitle = "Hello World";
     windowTraits->apiDumpLayer = arguments.read({"--api", "-a"});
     windowTraits->debugLayer = arguments.read({"--debug", "-d"});
+    windowTraits->fullscreen = arguments.read("--fullscreen");
 
     // show current FPS in window title-bar
     windowTraits->requestedLayers.push_back("VK_LAYER_LUNARG_monitor");

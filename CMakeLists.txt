@@ -10,8 +10,8 @@ project(vsg_amd_perf)
 
 find_package(vsg CONFIG REQUIRED)
 
-add_executable(vsg_amd_offscreen_perf vsg_amd_offscreen_perf.cpp)
-target_link_libraries(vsg_amd_offscreen_perf PRIVATE vsg::vsg)
+add_executable(offscreen_perf offscreen_perf.cpp)
+target_link_libraries(offscreen_perf PRIVATE vsg::vsg)
 
-add_executable(vsg_amd_window_perf vsg_amd_window_perf.cpp)
-target_link_libraries(vsg_amd_window_perf PRIVATE vsg::vsg)
+add_executable(window_perf window_perf.cpp)
+target_link_libraries(window_perf PRIVATE vsg::vsg)

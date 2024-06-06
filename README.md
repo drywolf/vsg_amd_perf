@@ -49,19 +49,22 @@ vsg_amd_offscreen_perf.exe
 vsg_amd_window_perf.exe
 ```
 
-# App command-line options
+## offscreen_perf Command-Line
 
-## vsg_amd_offscreen_perf
+```
+--debug | -d     enable Vulkan validation layer
+--api | -a       enable Vulkan api-dump layer
+-n <int>         render the given number of frames and exit the application
+-f               write frame-delimiter log messages to console
+                 (can be helpful when combined with --api | -a)
+--details        print Vulkan function argument details when using api-dump
+--logfile        write the Vulkan api-dump output to a vk_api.log file instead of console
+```
 
-* `--debug` | `-d` ... enable Vulkan validation layer
-* `--api` | `-a` ... enable Vulkan api-dump layer
-* `-n <int>` ... render the given number of frames and exit the application
-* `-f` ... write frame-delimiter log messages to console
-    * can be helpful when combined with `--api` | `-a`
-* `--details` ... print Vulkan function argument details when using api-dump
-* `--logfile` ... write the Vulkan api-dump output to a `vk_api.log` file instead of console
+## window_perf Command-Line
 
-## vsg_amd_window_perf
-
-* `--debug` | `-d` ... enable Vulkan validation layer
-* `--api` | `-a` ... enable Vulkan api-dump layer
+```
+--debug | -d     enable Vulkan validation layer
+--api | -a       enable Vulkan api-dump layer
+--fullscreen     run app in fullscreen mode
+```
