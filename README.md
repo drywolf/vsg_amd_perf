@@ -3,6 +3,8 @@
 This repo contains two minimal VSG applications that are minimal repro cases for AMD GPU performance issues on Windows.
 (Linux performance has not yet been tested)
 
+For a detailed discussion of this issue, see: [VulkanSceneGraph Issue #1208](https://github.com/vsg-dev/VulkanSceneGraph/issues/1208)
+
 <u>**AMD Performance issue:**</u>
 
 On Windows with AMD GPUs, the two included apps are showing heavy "Copy" workload in the Windows Task-Manager, and the achieved framerate (FPS) are far below what would be expected from such simple Vulkan apps.
