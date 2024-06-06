@@ -20,6 +20,9 @@ int main(int argc, char** argv)
     windowTraits->apiDumpLayer = arguments.read({"--api", "-a"});
     windowTraits->debugLayer = arguments.read({"--debug", "-d"});
 
+    // show current FPS in window title-bar
+    windowTraits->requestedLayers.push_back("VK_LAYER_LUNARG_monitor");
+
     // IMPORTANT: unlocked framerate / no VSync
     windowTraits->swapchainPreferences.presentMode = VK_PRESENT_MODE_IMMEDIATE_KHR;
 
