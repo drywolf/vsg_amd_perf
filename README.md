@@ -11,13 +11,11 @@ On Windows with AMD GPUs, the two included apps are showing heavy "Copy" workloa
 
 <img src="imgs/Win11_AMD_Unexpected_Copy_Workload.png" width="400">
 
-<img src="">
-
 For comparison, an NVidia RTX 2080 Ti running the same applications is showing little to no workload & delivering high FPS:
 
 <img src="imgs/Win10_NVIDIA_No_Workload.png" width="400">
 
-PS: For the vsg_amd_window_perf app, the Windows Task-Manager is additionally showing a 50% 3D workload, on top of the already unexpected 50% Copy workload.
+PS: For the `window_perf` app, the Windows Task-Manager is additionally showing a 50% 3D workload, on top of the already unexpected 50% Copy workload.
 
 <img src="imgs/vsg_amd_window_perf_Copy_And_3D_Workload.png" width="400">
 
@@ -45,8 +43,8 @@ cmake --build build --config Release
 
 ```
 cd build\Release
-vsg_amd_offscreen_perf.exe
-vsg_amd_window_perf.exe
+offscreen_perf.exe
+window_perf.exe
 ```
 
 ## offscreen_perf Command-Line
