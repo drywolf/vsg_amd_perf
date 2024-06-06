@@ -3,7 +3,10 @@
 
 #include <vsg/all.h>
 
+#include <chrono>
 #include <iostream>
+
+using namespace std::chrono_literals;
 
 int main(int argc, char** argv)
 {
@@ -73,6 +76,9 @@ int main(int argc, char** argv)
     // compile all Vulkan objects and transfer image, vertex and primitive data to GPU
     viewer->compile();
 
+    auto start = std::chrono::high_resolution_clock::now();
+    uint32_t rendered_frames = 0;
+
     // rendering main loop
     while (viewer->advanceToNextFrame())
     {
@@ -84,6 +90,19 @@ int main(int argc, char** argv)
         viewer->recordAndSubmit();
 
         viewer->present();
+
+        ++rendered_frames;
+
+        auto now = std::chrono::high_resolution_clock::now();
+        std::chrono::microseconds duration_us = std::chrono::duration_cast<std::chrono::microseconds>(now - start);
+        if (duration_us >= 1s)
+        {
+            double fps = rendered_frames / double(duration_us.count()) * 1000000.0;
+            std::cout << "FPS: " << fps << std::endl;
+
+            rendered_frames = 0;
+            start = std::chrono::high_resolution_clock::now();
+        }
     }
 
     // clean up done automatically thanks to ref_ptr<>
